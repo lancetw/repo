@@ -245,7 +245,7 @@ function App() {
             </div>
           ))}
           {isProcessing && <Indicator />}
-          {params?.page > 1 && (
+          {params?.page > 2 && (
             <div className="fixed right-0 bottom-0 px-10 py-5">
               <BackToTop color="gray" />
             </div>
