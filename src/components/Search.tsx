@@ -27,7 +27,7 @@ function Search({
             inputMode="search"
             defaultValue={defaultKeyword}
             placeholder="Search"
-            disabled={isLoading || isProcessing}
+            disabled={isLoading}
             className="bg-white h-10 px-5 pr-5 rounded-full text-sm focus:outline-none"
           />
         </form>
