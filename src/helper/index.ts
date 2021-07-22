@@ -16,15 +16,15 @@ export const HTTP_GET = (
 
 export const MAX_ITEMS_COUNT = 1000
 
-export const DELAY = 650
+export const DELAY = 1000
 export const DELAY_SHORT = 150
-export const DELAY_LONG = 1000
+export const DELAY_LONG = 1500
 
 export const LIMIT_REQUEST_TIME = 60000
 export const LIMIT_REQUEST_COUNT = 10
 export const RETRY_TIMES = 99
 
-export const INFINITE_SCROLL_THRESHOLD = 0.4
+export const INFINITE_SCROLL_THRESHOLD = 0.7
 
 export interface githubRepoItem {
   name: string
