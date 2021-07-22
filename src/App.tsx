@@ -176,6 +176,19 @@ function App() {
   const [data, setData] = useState<githubRepoItem[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
+  const [isShowBackToTop, setIsShowBackToTop] = useState<boolean>(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsShowBackToTop(
+        (document.documentElement.scrollTop || document.body.scrollTop) >
+          window.innerHeight
+      )
+    }
+    window.addEventListener('scroll', onScroll)
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [setIsShowBackToTop])
 
   useEffect(() => {
     const subscription = isProcessing$.asObservable().subscribe((value) => {
@@ -245,7 +258,7 @@ function App() {
             </div>
           ))}
           {isProcessing && <Indicator />}
-          {params?.page > 2 && (
+          {isShowBackToTop && (
             <div className="fixed right-0 bottom-0 px-10 py-5">
               <BackToTop color="gray" />
             </div>
